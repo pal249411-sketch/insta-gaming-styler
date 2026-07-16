@@ -3,485 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Premium Gaming Nickname & Advanced DP Styler ⚡</title>
+    <title>⚡ PRO Gaming & Profile Studio ⚡</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        :root { --primary: #7000ff; --accent: #ff007f; --bg: #050505; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg); color: #fff; padding: 20px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 600px; }
+        
+        /* Glassmorphism */
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px; margin-bottom: 20px; }
+        h1 { text-align: center; font-size: 1.8rem; background: linear-gradient(to right, #00d2ff, #9d4edd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
 
-        body {
-            background: linear-gradient(135deg, #09070f, #110922);
-            color: #ffffff;
-            min-height: 100vh;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        input { width: 100%; padding: 15px; background: #111; border: 2px solid #333; border-radius: 12px; color: white; font-size: 1.1rem; text-align: center; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .card { background: #1a1a1a; padding: 12px; border-radius: 12px; text-align: center; border: 1px solid #333; cursor: pointer; transition: 0.3s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .card span { font-size: 1.1rem; font-weight: bold; }
 
-        .container {
-            width: 100%;
-            max-width: 750px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 25px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.2rem;
-            background: linear-gradient(45deg, #00f2fe, #ff007f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 25px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #ff007f;
-            border-left: 5px solid #00f2fe;
-            padding-left: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
-
-        .tool-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 16px;
-            background: rgba(15, 10, 25, 0.8);
-            border: 2px solid #3a1c5d;
-            border-radius: 12px;
-            color: white;
-            font-size: 1.1rem;
-            outline: none;
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        input[type="text"]:focus {
-            border-color: #00f2fe;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
-        }
-
-        /* Nickfinder Style Lists */
-        .nick-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .nick-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 16px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.2s;
-        }
-
-        .nick-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: #00f2fe;
-        }
-
-        .nick-text {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: 0.5px;
-        }
-
-        .actions-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .votes-tracker {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .upvote { color: #00ff87; }
-        .downvote { color: #ff3838; }
-
-        .btn-action {
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-            border: none;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        .btn-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
-        }
-
-        /* Custom Tabs */
-        .tabs {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-
-        .tab-btn {
-            background: rgba(255,255,255,0.05);
-            color: #ccc;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 10px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            white-space: nowrap;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .tab-btn.active {
-            background: #ff007f;
-            color: white;
-            border-color: #ff007f;
-        }
-
-        /* Advanced DP Studio UI */
-        .dp-studio {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .canvas-container {
-            position: relative;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            background: #1a1528;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            border: 4px dashed rgba(255,255,255,0.15);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .dp-bg-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #2575fc; /* default background */
-            transition: 0.3s;
-            z-index: 1;
-        }
-
-        .user-pic {
-            position: absolute;
-            width: 82%;
-            height: 82%;
-            border-radius: 50%;
-            object-fit: cover;
-            z-index: 2;
-            display: none;
-            border: 3px solid white;
-        }
-
-        .placeholder-txt {
-            color: rgba(255,255,255,0.4);
-            font-size: 0.9rem;
-            z-index: 3;
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .studio-controls {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background: rgba(255, 255, 255, 0.01);
-            padding: 15px;
-            border-radius: 12px;
-        }
-
-        .control-label {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #aaa;
-            margin-bottom: 5px;
-        }
-
-        .color-palette {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 5px 0;
-        }
-
-        .color-dot {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            flex-shrink: 0;
-            transition: 0.2s;
-        }
-
-        .color-dot:hover, .color-dot.active {
-            border-color: white;
-            transform: scale(1.1);
-        }
-
-        .upload-wrapper {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-upload-avatar {
-            background: transparent;
-            border: 2px dashed #ff007f;
-            color: #ff007f;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .upload-wrapper input[type=file] {
-            font-size: 100px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
+        /* DP Maker */
+        .preview { width: 200px; height: 200px; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
+        #canvas { width: 100%; height: 100%; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; }
+        
+        /* Toast Notification */
+        #toast { position: fixed; bottom: 30px; background: var(--accent); padding: 15px 30px; border-radius: 50px; display: none; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>⚡ Profile & Gaming Studio ⚡</h1>
-
-        <!-- SECTION 1: DYNAMIC FONT CONVERTER -->
-        <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Nickfinder Font Generator</div>
-            <input type="text" id="liveFontInput" placeholder="Yahan apna naam type kijiye...">
-            <div class="nick-list" id="dynamicFontsGrid">
-                <!-- Advanced Custom Fonts dynamic yahan aayenge -->
-            </div>
-        </div>
-
-        <!-- SECTION 2: TRENDING FREE FIRE READY NAMES -->
-        <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-fire-flame-curved"></i> Top Free Fire Nicknames</div>
-            <div class="tabs">
-                <button class="tab-btn active" onclick="changeTab('ff')">⚡ Free Fire Top</button>
-                <button class="tab-btn" onclick="changeTab('dangerous')">⚔️ Dangerous</button>
-                <button class="tab-btn" onclick="changeTab('love')">☯️ Love Guru / Boys</button>
-            </div>
-            <div class="nick-list" id="trendingNamesBox">
-                <!-- Ready names list with vote counter -->
-            </div>
-        </div>
-
-        <!-- SECTION 3: ADVANCED PREMIUM DP STUDIO -->
-        <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-sliders"></i> Advanced DP Background Editor</div>
-            <div class="dp-studio">
-                
-                <div class="canvas-container" id="dpStudioCanvas">
-                    <div class="dp-bg-layer" id="bgLayer"></div>
-                    <img id="avatarImage" class="user-pic" src="" alt="User Avatar">
-                    <span id="placeholderLabel" class="placeholder-txt"><i class="fa-solid fa-image fa-2x"></i><br>Photo Add Kijiye</span>
-                </div>
-
-                <div class="upload-wrapper">
-                    <button class="btn-upload-avatar"><i class="fa-solid fa-camera"></i> Choose Your Photo</button>
-                    <input type="file" id="fileSelector" accept="image/*">
-                </div>
-
-                <div class="studio-controls">
-                    <div class="control-label">Solid & Aesthetic Background Colors:</div>
-                    <div class="color-palette">
-                        <div class="color-dot active" style="background: #2575fc;" onclick="setBgColor('#2575fc', this)"></div>
-                        <div class="color-dot" style="background: #ff0844;" onclick="setBgColor('#ff0844', this)"></div>
-                        <div class="color-dot" style="background: #00ff87;" onclick="setBgColor('#00ff87', this)"></div>
-                        <div class="color-dot" style="background: #ffb199;" onclick="setBgColor('#ffb199', this)"></div>
-                        <div class="color-dot" style="background: #b300a7;" onclick="setBgColor('#b300a7', this)"></div>
-                        <div class="color-dot" style="background: #f5af19;" onclick="setBgColor('#f5af19', this)"></div>
-                        <div class="color-dot" style="background: #111111;" onclick="setBgColor('#111111', this)"></div>
-                        <div class="color-dot" style="background: #7f00ff;" onclick="setBgColor('#7f00ff', this)"></div>
-                    </div>
-                </div>
-
-                <button class="btn-action" style="background: linear-gradient(45deg, #ff007f, #7f00ff); padding: 14px 40px; font-size: 1.1rem; width: 100%;" onclick="saveStudioDP()"><i class="fa-solid fa-download"></i> Save HD Profile Picture</button>
-            </div>
-        </div>
-
+<div class="container">
+    <h1>🔥 PRO Gaming Nicknames</h1>
+    
+    <div class="glass">
+        <input type="text" id="nameInput" placeholder="Enter Name (e.g. Rohit)">
+        <div class="grid" id="fontOutput"></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script>
-        // Nickfinder style symbols combinations
-        const premiumDecorations = [
-            { pre: "꧁༒•", post: "•༒꧂" },
-            { pre: "⚔️ ", post: " ⚔️" },
-            { pre: "ツ ", post: " 𝔊𝔬𝔡" },
-            { pre: "亗 ", post: " 亗" },
-            { pre: "☠️ ", post: " ☠️" },
-            { pre: "〆", post: " 〆" },
-            { pre: "★━(", post: ")━★" },
-            { pre: "◥ ", post: " ◤" }
-        ];
+    <h1>📸 Pro DP Editor</h1>
+    <div class="glass">
+        <div class="preview"><img id="canvas" src="https://via.placeholder.com/200" alt="DP"></div>
+        <input type="file" id="imgInput" style="margin-top: 15px;">
+        <div class="grid" style="margin-top: 15px;">
+            <button class="card" onclick="changeBorder('#ff007f')">Neon Pink</button>
+            <button class="card" onclick="changeBorder('#00d2ff')">Cyber Blue</button>
+        </div>
+    </div>
+</div>
 
-        const readyNicknames = {
-            ff: [
-                { name: "╰‿╯ 𝔎ℑ𝔑𝔖 ✨", up: "576k", down: "376k" },
-                { name: "彡☆⚔️𝕵𝕺𝕶𝕽⚔️☆彡", up: "472k", down: "383k" },
-                { name: "亗 𝓝𝓘𝓝𝓙𝓐 亗", up: "370k", down: "281k" },
-                { name: "☠️ ŁÙçKy ☠️", up: "232k", down: "199k" }
-            ],
-            dangerous: [
-                { name: "🥷 ᴛᴏxɪᴄᴏ God", up: "29k", down: "22k" },
-                { name: "⚔️【𝔐ℜ】𝔇𝔞𝔯𝔨⚔️", up: "25k", down: "23k" },
-                { name: "☠️ V𝜄𝓅𝔢𝔯 ☠️", up: "18k", down: "12k" },
-                { name: "彡 V𝓪𝔫 poaching ◤", up: "14k", down: "9k" }
-            ],
-            love: [
-                { name: "☯️ L𝓞𝓥𝓔 ℬ𝓞𝓨 ☯️", up: "28k", down: "25k" },
-                { name: "♡ R o h i t ♡", up: "22k", down: "14k" },
-                { name: "꧁༺ L𝓞𝓥𝓔 G𝓤R𝓤 ༻꧂", up: "19k", down: "11k" }
-            ]
-        };
+<div id="toast">Copied Successfully!</div>
 
-        const liveFontInput = document.getElementById('liveFontInput');
-        const dynamicFontsGrid = document.getElementById('dynamicFontsGrid');
+<script>
+    const nameInput = document.getElementById('nameInput');
+    const fontOutput = document.getElementById('fontOutput');
+    const imgInput = document.getElementById('imgInput');
+    const canvas = document.getElementById('canvas');
 
-        liveFontInput.addEventListener('input', () => {
-            const val = liveFontInput.value || "Rohit";
-            dynamicFontsGrid.innerHTML = '';
+    const symbols = ["꧁༺{name}༻꧂", "⚡{name}⚡", "亗{name}亗", "☠️{name}☠️", "⚔️{name}⚔️", "★{name}★"];
 
-            premiumDecorations.forEach(deco => {
-                const fullStyleName = deco.pre + val + deco.post;
-                const card = document.createElement('div');
-                card.className = 'nick-card';
-                card.innerHTML = `
-                    <span class="nick-text">${fullStyleName}</span>
-                    <div class="actions-right">
-                        <button class="btn-action" onclick="copyText('${fullStyleName}')">Copy</button>
-                    </div>
-                `;
-                dynamicFontsGrid.appendChild(card);
-            });
+    nameInput.addEventListener('input', () => {
+        const val = nameInput.value || "Rohit";
+        fontOutput.innerHTML = '';
+        symbols.forEach(s => {
+            const nick = s.replace("{name}", val);
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `<span>${nick}</span>`;
+            div.onclick = () => copy(nick);
+            fontOutput.appendChild(div);
         });
+    });
 
-        function changeTab(cat) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            renderReadyNames(cat);
-        }
+    imgInput.onchange = e => {
+        canvas.src = URL.createObjectURL(e.target.files[0]);
+    }
 
-        function renderReadyNames(cat) {
-            const box = document.getElementById('trendingNamesBox');
-            box.innerHTML = '';
-            readyNicknames[cat].forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'nick-card';
-                card.innerHTML = `
-                    <span class="nick-text">${item.name}</span>
-                    <div class="actions-right">
-                        <div class="votes-tracker">
-                            <span class="upvote"><i class="fa-solid fa-thumbs-up"></i> ${item.up}</span>
-                            <span class="downvote"><i class="fa-solid fa-thumbs-down"></i> ${item.down}</span>
-                        </div>
-                        <button class="btn-action" onclick="copyText('${item.name}')">Copy</button>
-                    </div>
-                `;
-                box.appendChild(card);
-            });
-        }
+    function changeBorder(color) { canvas.style.borderColor = color; }
 
-        function copyText(txt) {
-            navigator.clipboard.writeText(txt).then(() => {
-                alert('Copied: ' + txt);
-            });
-        }
-
-        // DP Studio Logic
-        const fileSelector = document.getElementById('fileSelector');
-        const avatarImage = document.getElementById('avatarImage');
-        const placeholderLabel = document.getElementById('placeholderLabel');
-        const bgLayer = document.getElementById('bgLayer');
-
-        fileSelector.addEventListener('change', function() {
-            const file = this.files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    avatarImage.src = e.target.result;
-                    avatarImage.style.display = 'block';
-                    placeholderLabel.style.display = 'none';
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        function setBgColor(color, element) {
-            bgLayer.style.background = color;
-            document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
-            element.classList.add('active');
-        }
-
-        function saveStudioDP() {
-            const targetCanvas = document.getElementById('dpStudioCanvas');
-            html2canvas(targetCanvas, { scale: 3, useCORS: true }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = 'premium-avatar.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-            });
-        }
-
-        // Init load
-        liveFontInput.dispatchEvent(new Event('input'));
-        renderReadyNames('ff');
-    </script>
+    function copy(text) {
+        navigator.clipboard.writeText(text);
+        const t = document.getElementById('toast');
+        t.style.display = 'block';
+        setTimeout(() => t.style.display = 'none', 2000);
+    }
+    
+    nameInput.dispatchEvent(new Event('input'));
+</script>
 </body>
 </html>
