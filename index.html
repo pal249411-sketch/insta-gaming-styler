@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social & Gaming Profile Styler</title>
+    <title>⚡ Premium Gaming Nickname & Advanced DP Styler ⚡</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,10 +14,10 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c20, #15102a);
+            background: linear-gradient(135deg, #09070f, #110922);
             color: #ffffff;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -25,216 +25,266 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             margin-bottom: 30px;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #ff007f, #7f00ff);
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #00f2fe, #ff007f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 30px;
-            font-weight: 800;
+            margin-bottom: 25px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #00f2fe;
-            border-left: 4px solid #ff007f;
-            padding-left: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ff007f;
+            border-left: 5px solid #00f2fe;
+            padding-left: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-weight: 700;
         }
 
         .tool-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 18px;
             padding: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         input[type="text"] {
             width: 100%;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid #7f00ff;
-            border-radius: 10px;
+            padding: 16px;
+            background: rgba(15, 10, 25, 0.8);
+            border: 2px solid #3a1c5d;
+            border-radius: 12px;
             color: white;
             font-size: 1.1rem;
             outline: none;
             transition: 0.3s;
+            text-align: center;
         }
 
         input[type="text"]:focus {
-            border-color: #ff007f;
-            box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+            border-color: #00f2fe;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
         }
 
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 20px;
+        /* Nickfinder Style Lists */
+        .nick-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
         }
 
-        @media(min-width: 600px) {
-            .results-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        .font-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
+        .nick-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 16px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .font-text {
-            font-size: 1.1rem;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            background: linear-gradient(45deg, #7f00ff, #ff007f);
-            border: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
             transition: 0.2s;
         }
 
-        .copy-btn:hover {
-            transform: scale(1.05);
+        .nick-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #00f2fe;
         }
 
+        .nick-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .actions-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .votes-tracker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .upvote { color: #00ff87; }
+        .downvote { color: #ff3838; }
+
+        .btn-action {
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+        }
+
+        /* Custom Tabs */
         .tabs {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             overflow-x: auto;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         .tab-btn {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            color: #ccc;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 18px;
+            border-radius: 30px;
             cursor: pointer;
             white-space: nowrap;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .tab-btn.active {
             background: #ff007f;
+            color: white;
+            border-color: #ff007f;
         }
 
-        .names-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
-        @media(min-width: 600px) {
-            .names-list { grid-template-columns: 1fr 1fr; }
-        }
-
-        .dp-uploader {
+        /* Advanced DP Studio UI */
+        .dp-studio {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
         }
 
-        .preview-container {
+        .canvas-container {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
-            background: #222;
-            overflow: hidden;
+            background: #1a1528;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 4px dashed rgba(255,255,255,0.3);
+            overflow: hidden;
+            border: 4px dashed rgba(255,255,255,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        .preview-image {
-            width: 90%;
-            height: 90%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: none;
-        }
-
-        .dp-border-effect {
+        .dp-bg-layer {
             position: absolute;
             width: 100%;
             height: 100%;
+            background: #2575fc; /* default background */
+            transition: 0.3s;
+            z-index: 1;
+        }
+
+        .user-pic {
+            position: absolute;
+            width: 82%;
+            height: 82%;
             border-radius: 50%;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+            object-fit: cover;
+            z-index: 2;
+            display: none;
+            border: 3px solid white;
+        }
+
+        .placeholder-txt {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            z-index: 3;
+            text-align: center;
             pointer-events: none;
-            border: 8px solid transparent;
         }
 
-        .border-selectors {
+        .studio-controls {
+            width: 100%;
             display: flex;
+            flex-direction: column;
             gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 15px;
+            border-radius: 12px;
         }
 
-        .border-opt {
-            width: 40px;
-            height: 40px;
+        .control-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px 0;
+        }
+
+        .color-dot {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             cursor: pointer;
-            border: 2px solid white;
+            border: 2px solid transparent;
+            flex-shrink: 0;
             transition: 0.2s;
         }
 
-        .border-opt:hover { transform: scale(1.1); }
+        .color-dot:hover, .color-dot.active {
+            border-color: white;
+            transform: scale(1.1);
+        }
 
-        .b-neon { background: linear-gradient(45deg, #00f2fe, #4facfe); }
-        .b-fire { background: linear-gradient(45deg, #ff0844, #ffb199); }
-        .b-royal { background: linear-gradient(45deg, #f12711, #f5af19); }
-        .b-magic { background: linear-gradient(45deg, #b300a7, #ff007f); }
-
-        .upload-btn-wrapper {
+        .upload-wrapper {
             position: relative;
             overflow: hidden;
-            display: inline-block;
         }
 
-        .btn-upload {
-            border: 2px solid #00f2fe;
-            color: #00f2fe;
-            background-color: transparent;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
+        .btn-upload-avatar {
+            background: transparent;
+            border: 2px dashed #ff007f;
+            color: #ff007f;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .upload-btn-wrapper input[type=file] {
+        .upload-wrapper input[type=file] {
             font-size: 100px;
             position: absolute;
             left: 0;
@@ -247,158 +297,191 @@
 <body>
 
     <div class="container">
-        <h1>✨ Profile & Gaming Styler ✨</h1>
+        <h1>⚡ Profile & Gaming Studio ⚡</h1>
 
+        <!-- SECTION 1: DYNAMIC FONT CONVERTER -->
         <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-font"></i> Stylish Font Converter</div>
-            <input type="text" id="fontInput" placeholder="Yahan apna naam likhein (e.g. Rohit)...">
-            <div class="results-grid" id="fontResults"></div>
+            <div class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Nickfinder Font Generator</div>
+            <input type="text" id="liveFontInput" placeholder="Yahan apna naam type kijiye...">
+            <div class="nick-list" id="dynamicFontsGrid">
+                <!-- Advanced Custom Fonts dynamic yahan aayenge -->
+            </div>
         </div>
 
+        <!-- SECTION 2: TRENDING FREE FIRE READY NAMES -->
         <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-gamepad"></i> Trending Gaming Nicknames</div>
+            <div class="section-title"><i class="fa-solid fa-fire-flame-curved"></i> Top Free Fire Nicknames</div>
             <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab('dangerous')">⚔️ Dangerous</button>
-                <button class="tab-btn" onclick="switchTab('attitude')">🔥 Attitude</button>
-                <button class="tab-btn" onclick="switchTab('ghost')">🕶️ Ghost</button>
-                <button class="tab-btn" onclick="switchTab('initials')">👑 Initials</button>
+                <button class="tab-btn active" onclick="changeTab('ff')">⚡ Free Fire Top</button>
+                <button class="tab-btn" onclick="changeTab('dangerous')">⚔️ Dangerous</button>
+                <button class="tab-btn" onclick="changeTab('love')">☯️ Love Guru / Boys</button>
             </div>
-            <div class="names-list" id="gamingNamesList"></div>
+            <div class="nick-list" id="trendingNamesBox">
+                <!-- Ready names list with vote counter -->
+            </div>
         </div>
 
+        <!-- SECTION 3: ADVANCED PREMIUM DP STUDIO -->
         <div class="tool-box">
-            <div class="section-title"><i class="fa-solid fa-circle-user"></i> HD DP Border Maker</div>
-            <div class="dp-uploader">
-                <div class="preview-container" id="previewBox">
-                    <span id="uploadText" style="color: rgba(255,255,255,0.5); font-size: 0.9rem; text-align: center; padding: 10px;">Photo Upload Kijiye</span>
-                    <img id="dpPreview" class="preview-image" src="" alt="Preview">
-                    <div id="borderOverlay" class="dp-border-effect"></div>
-                </div>
-
-                <div class="upload-btn-wrapper">
-                    <button class="btn-upload"><i class="fa-solid fa-upload"></i> Choose Image</button>
-                    <input type="file" id="imageInput" accept="image/*">
-                </div>
-
-                <div style="font-weight: 600; margin-top: 10px;">Select Border Style:</div>
-                <div class="border-selectors">
-                    <div class="border-opt b-neon" onclick="applyBorder('linear-gradient(45deg, #00f2fe, #4facfe)')"></div>
-                    <div class="border-opt b-fire" onclick="applyBorder('linear-gradient(45deg, #ff0844, #ffb199)')"></div>
-                    <div class="border-opt b-royal" onclick="applyBorder('linear-gradient(45deg, #f12711, #f5af19)')"></div>
-                    <div class="border-opt b-magic" onclick="applyBorder('linear-gradient(45deg, #b300a7, #ff007f)')"></div>
-                </div>
+            <div class="section-title"><i class="fa-solid fa-sliders"></i> Advanced DP Background Editor</div>
+            <div class="dp-studio">
                 
-                <button class="copy-btn" style="margin-top: 15px; padding: 12px 30px; font-size: 1rem;" onclick="downloadImage()"><i class="fa-solid fa-download"></i> Save HD DP</button>
+                <div class="canvas-container" id="dpStudioCanvas">
+                    <div class="dp-bg-layer" id="bgLayer"></div>
+                    <img id="avatarImage" class="user-pic" src="" alt="User Avatar">
+                    <span id="placeholderLabel" class="placeholder-txt"><i class="fa-solid fa-image fa-2x"></i><br>Photo Add Kijiye</span>
+                </div>
+
+                <div class="upload-wrapper">
+                    <button class="btn-upload-avatar"><i class="fa-solid fa-camera"></i> Choose Your Photo</button>
+                    <input type="file" id="fileSelector" accept="image/*">
+                </div>
+
+                <div class="studio-controls">
+                    <div class="control-label">Solid & Aesthetic Background Colors:</div>
+                    <div class="color-palette">
+                        <div class="color-dot active" style="background: #2575fc;" onclick="setBgColor('#2575fc', this)"></div>
+                        <div class="color-dot" style="background: #ff0844;" onclick="setBgColor('#ff0844', this)"></div>
+                        <div class="color-dot" style="background: #00ff87;" onclick="setBgColor('#00ff87', this)"></div>
+                        <div class="color-dot" style="background: #ffb199;" onclick="setBgColor('#ffb199', this)"></div>
+                        <div class="color-dot" style="background: #b300a7;" onclick="setBgColor('#b300a7', this)"></div>
+                        <div class="color-dot" style="background: #f5af19;" onclick="setBgColor('#f5af19', this)"></div>
+                        <div class="color-dot" style="background: #111111;" onclick="setBgColor('#111111', this)"></div>
+                        <div class="color-dot" style="background: #7f00ff;" onclick="setBgColor('#7f00ff', this)"></div>
+                    </div>
+                </div>
+
+                <button class="btn-action" style="background: linear-gradient(45deg, #ff007f, #7f00ff); padding: 14px 40px; font-size: 1.1rem; width: 100%;" onclick="saveStudioDP()"><i class="fa-solid fa-download"></i> Save HD Profile Picture</button>
             </div>
         </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        const fontMaps = [
-            { name: "Script", a: "𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃", A: "𝓐𝓑𝓒𝓓𝓔𝓕𝓖Format𝓘𝓙𝓚𝓛𝓜𝓝Format𝓠𝓡𝓢𝓣𝓤𝓥𝓦Format𝓨𝓩" },
-            { name: "Gothic", a: "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷", A: "𝔄𝔅𝔒𝔇𝔈𝔉𝔊𝔧𝔍𝔎𝔏𝔐𝔑𝔔𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ" },
-            { name: "Circles", a: "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ", A: "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ" },
-            { name: "Mathematical", a: "𝖺𝖻𝖼𝖽𝖾𝖿𝖼𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓", A: "𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖲𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹" }
+        // Nickfinder style symbols combinations
+        const premiumDecorations = [
+            { pre: "꧁༒•", post: "•༒꧂" },
+            { pre: "⚔️ ", post: " ⚔️" },
+            { pre: "ツ ", post: " 𝔊𝔬𝔡" },
+            { pre: "亗 ", post: " 亗" },
+            { pre: "☠️ ", post: " ☠️" },
+            { pre: "〆", post: " 〆" },
+            { pre: "★━(", post: ")━★" },
+            { pre: "◥ ", post: " ◤" }
         ];
 
-        const gamingNames = {
-            dangerous: ["𝔖𝔫𝔦𝔭𝔢𝔯𝔊𝔬𝔡", "𝕯𝖆𝖗𝖐𝕶𝖓𝖎𝖍𝖙", "⚔️Viper_Strike⚔️", "☠️𝕭𝖑𝖔𝖔𝖉𝕳𝖚𝖓𝖙𝖊𝖗☠️", "⚡️KILLER_BOT⚡️", "々🎭CRIMINAL々"],
-            attitude: ["亗 KEY_TO_KILL 亗", "⚡️ThunderStorm⚡️", "𝓒𝓱𝓪𝓶𝓿𝓲𝓸𝓷_𝓧", "♛ KING_IS_BACK ♛", "🔥BAD_BOY🔥", "亗MR_PERFECT亗"],
-            ghost: ["◥Phantom◤", "░S░𝔥░𝔞░𝔡░𝔬░𝔴░", "〖Glitch〗", "☣️Anonymous☣️", "💥Vanish💥", "👻SOUL_LESS👻"],
-            initials: ["⚡ R K ⚡", "亗 R O H I T 亗", "🅳 🆅 🅸 🅳", "〆S A M 〆", "A L O N E", "⚓️ B O S S ⚓️"]
+        const readyNicknames = {
+            ff: [
+                { name: "╰‿╯ 𝔎ℑ𝔑𝔖 ✨", up: "576k", down: "376k" },
+                { name: "彡☆⚔️𝕵𝕺𝕶𝕽⚔️☆彡", up: "472k", down: "383k" },
+                { name: "亗 𝓝𝓘𝓝𝓙𝓐 亗", up: "370k", down: "281k" },
+                { name: "☠️ ŁÙçKy ☠️", up: "232k", down: "199k" }
+            ],
+            dangerous: [
+                { name: "🥷 ᴛᴏxɪᴄᴏ God", up: "29k", down: "22k" },
+                { name: "⚔️【𝔐ℜ】𝔇𝔞𝔯𝔨⚔️", up: "25k", down: "23k" },
+                { name: "☠️ V𝜄𝓅𝔢𝔯 ☠️", up: "18k", down: "12k" },
+                { name: "彡 V𝓪𝔫 poaching ◤", up: "14k", down: "9k" }
+            ],
+            love: [
+                { name: "☯️ L𝓞𝓥𝓔 ℬ𝓞𝓨 ☯️", up: "28k", down: "25k" },
+                { name: "♡ R o h i t ♡", up: "22k", down: "14k" },
+                { name: "꧁༺ L𝓞𝓥𝓔 G𝓤R𝓤 ༻꧂", up: "19k", down: "11k" }
+            ]
         };
 
-        const fontInput = document.getElementById('fontInput');
-        const fontResults = document.getElementById('fontResults');
+        const liveFontInput = document.getElementById('liveFontInput');
+        const dynamicFontsGrid = document.getElementById('dynamicFontsGrid');
 
-        fontInput.addEventListener('input', () => {
-            const text = fontInput.value || "Rohit";
-            fontResults.innerHTML = '';
-            
-            fontMaps.forEach(map => {
-                let converted = '';
-                for (let char of text) {
-                    if (char >= 'a' && char <= 'z') {
-                        converted += map.a[char.charCodeAt(0) - 97];
-                    } else if (char >= 'A' && char <= 'Z') {
-                        converted += map.A[char.charCodeAt(0) - 65];
-                    } else {
-                        converted += char;
-                    }
-                }
-                
+        liveFontInput.addEventListener('input', () => {
+            const val = liveFontInput.value || "Rohit";
+            dynamicFontsGrid.innerHTML = '';
+
+            premiumDecorations.forEach(deco => {
+                const fullStyleName = deco.pre + val + deco.post;
                 const card = document.createElement('div');
-                card.className = 'font-card';
+                card.className = 'nick-card';
                 card.innerHTML = `
-                    <span class="font-text">${converted}</span>
-                    <button class="copy-btn" onclick="copyToClipboard('${converted}')">Copy</button>
+                    <span class="nick-text">${fullStyleName}</span>
+                    <div class="actions-right">
+                        <button class="btn-action" onclick="copyText('${fullStyleName}')">Copy</button>
+                    </div>
                 `;
-                fontResults.appendChild(card);
+                dynamicFontsGrid.appendChild(card);
             });
         });
 
-        function switchTab(category) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        function changeTab(cat) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            loadGamingNames(category);
+            renderReadyNames(cat);
         }
 
-        function loadGamingNames(category) {
-            const listContainer = document.getElementById('gamingNamesList');
-            listContainer.innerHTML = '';
-            gamingNames[category].forEach(name => {
+        function renderReadyNames(cat) {
+            const box = document.getElementById('trendingNamesBox');
+            box.innerHTML = '';
+            readyNicknames[cat].forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'font-card';
+                card.className = 'nick-card';
                 card.innerHTML = `
-                    <span class="font-text">${name}</span>
-                    <button class="copy-btn" onclick="copyToClipboard('${name}')">Copy</button>
+                    <span class="nick-text">${item.name}</span>
+                    <div class="actions-right">
+                        <div class="votes-tracker">
+                            <span class="upvote"><i class="fa-solid fa-thumbs-up"></i> ${item.up}</span>
+                            <span class="downvote"><i class="fa-solid fa-thumbs-down"></i> ${item.down}</span>
+                        </div>
+                        <button class="btn-action" onclick="copyText('${item.name}')">Copy</button>
+                    </div>
                 `;
-                listContainer.appendChild(card);
+                box.appendChild(card);
             });
         }
 
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard: ' + text);
+        function copyText(txt) {
+            navigator.clipboard.writeText(txt).then(() => {
+                alert('Copied: ' + txt);
             });
         }
 
-        const imageInput = document.getElementById('imageInput');
-        const dpPreview = document.getElementById('dpPreview');
-        const uploadText = document.getElementById('uploadText');
-        const borderOverlay = document.getElementById('borderOverlay');
+        // DP Studio Logic
+        const fileSelector = document.getElementById('fileSelector');
+        const avatarImage = document.getElementById('avatarImage');
+        const placeholderLabel = document.getElementById('placeholderLabel');
+        const bgLayer = document.getElementById('bgLayer');
 
-        imageInput.addEventListener('change', function() {
+        fileSelector.addEventListener('change', function() {
             const file = this.files[0];
-            if (file) {
+            if(file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    dpPreview.src = e.target.result;
-                    dpPreview.style.display = 'block';
-                    uploadText.style.display = 'none';
+                    avatarImage.src = e.target.result;
+                    avatarImage.style.display = 'block';
+                    placeholderLabel.style.display = 'none';
                 }
                 reader.readAsDataURL(file);
             }
         });
 
-        function applyBorder(gradient) {
-            borderOverlay.style.borderImage = `${gradient} 1`;
-            borderOverlay.style.borderStyle = 'solid';
+        function setBgColor(color, element) {
+            bgLayer.style.background = color;
+            document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+            element.classList.add('active');
         }
 
-        function downloadImage() {
-            const previewBox = document.getElementById('previewBox');
-            html2canvas(previewBox, { backgroundColor: null, useCORS: true }).then(canvas => {
+        function saveStudioDP() {
+            const targetCanvas = document.getElementById('dpStudioCanvas');
+            html2canvas(targetCanvas, { scale: 3, useCORS: true }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'stylish-dp.png';
-                link.href = canvas.toDataURL();
+                link.download = 'premium-avatar.png';
+                link.href = canvas.toDataURL('image/png');
                 link.click();
             });
         }
 
-        fontInput.dispatchEvent(new Event('input'));
-        loadGamingNames('dangerous');
+        // Init load
+        liveFontInput.dispatchEvent(new Event('input'));
+        renderReadyNames('ff');
     </script>
 </body>
 </html>
